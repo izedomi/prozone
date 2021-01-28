@@ -128,7 +128,7 @@ class ProviderDetails extends StatelessWidget {
                              color: Theme.of(context).primaryColor,
                              textColor: Colors.white,
                              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => FarmGalleryScreen(galleryImages: provider.images))), 
-                             child: Text(provider.images.length > 1 ? "View Images ${provider.images.length}" : "View Image ${provider.images.length}")
+                             child: Text(provider.images.length > 1 ? "View Images (${provider.images.length})" : "View Image (${provider.images.length})")
                             ),
                          ): SizedBox()
                       ]
