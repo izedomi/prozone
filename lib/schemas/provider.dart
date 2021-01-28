@@ -26,22 +26,22 @@ class ProviderSchema {
     });
 
     factory ProviderSchema.createProvider(Map<String, dynamic> json){
-        
+  
         return ProviderSchema(
-          id: json['id'].toString(),
-          name: json['name'].toString(),
-          description: json['description'].toString(),
-          rating: json['rating'].toString(),
-          address: json['address'].toString(),
-          images: json['images'].toList(),
+          id: json["id"] == null ? "N/A" : json['id'].toString(),
+          name: json["name"] == null ? "N/A" : json['name'].toString(),
+          description: json["description"] == null ? "N/A" : json['description'].toString(),
+          rating: json["rating"] == null ? "N/A" : json['rating'].toString(),
+          address: json["address"] == null ? "N/A" : json['address'].toString(),
+          images: json["address"] == null ? "N/A" : json['images'].toList(),
           activeStatus: json['active_status'].toString(),
           providerType:  {
-            "id": json["provider_type"]["id"].toString(),
-            "name": json["provider_type"]["name"]
+            "id": json["provider_type"] == null ? "N/A" : json["provider_type"]["id"].toString(),
+            "name": json["provider_type"] == null ? "N/A" : json["provider_type"]["name"]
           },
           state:  {
-            "id": json["state"]["id"].toString(),
-            "name": json["state"]["name"]
+            "id": json["state"] == null ? "N/A" : json["state"]["id"].toString(),
+            "name": json["state"] == null ? "N/A" : json["state"]["name"]
           },
         );
     }

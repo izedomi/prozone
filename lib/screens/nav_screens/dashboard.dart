@@ -1,7 +1,6 @@
 
 import 'package:ProZone/controllers/nav_screens/providers_controller.dart';
 import 'package:ProZone/controllers/provider_type_controller.dart';
-import 'package:ProZone/controllers/state_controller.dart';
 import 'package:ProZone/data/constants.dart';
 import 'package:ProZone/data/styles.dart';
 import 'package:ProZone/schemas/provider_type.dart';
@@ -33,7 +32,7 @@ class _DashboardState extends State<Dashboard> {
     List filteredProvidersList = List();
     ProviderController sc = ProviderController();
     ProviderTypeController ptc = ProviderTypeController();
-    StateController stateController = StateController();
+    
 
     int activeProviders;
     int pendingProviders;
@@ -44,8 +43,9 @@ class _DashboardState extends State<Dashboard> {
     void initState() {
       super.initState();
 
-      getProviderTypes();
       getProviders();
+      getProviderTypes();
+      
 
     }
 
@@ -58,9 +58,9 @@ class _DashboardState extends State<Dashboard> {
             setState(() {
                 providers = res["providers"];
                 filteredProvidersList = providers;
-                //isLoading = false;
             });
-
+           
+              
             var activeProvidersList = providers.where(
               (element) => element.activeStatus.toLowerCase() == "active")
               .toList();
@@ -76,6 +76,10 @@ class _DashboardState extends State<Dashboard> {
             activeProviders = activeProvidersList.length;
             pendingProviders = pendingProvidersList.length;
             deletedProviders = deletedProvidersList.length;
+
+            print(activeProviders.toString());
+            print(pendingProviders.toString());
+            print(deletedProviders.toString());
 
 
             Future.delayed(Duration(milliseconds: 100), (){
