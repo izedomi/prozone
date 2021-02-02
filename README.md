@@ -5,8 +5,6 @@ A new Flutter application.
 
 Auth Credentials
 
-
 - email/username : ema@gmail.com
 - password: emmanuel
 
-F
